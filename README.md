@@ -1,77 +1,102 @@
-# QR-code-generator
 
-Uses Node.js , NPM , native fs module
-The two npm packages used for this project are: 
-1. Inquirer.js : allow us to get input from the user
-2. qr-image : generate images as png to save on our local   file system
+# QR Code Generator
 
-# Flow of Project
-1.  Used the innquirer npm package to get user input
-2. Used the qr-image npm package to turn the user entered URL into a QR code image
-3. Created a txt file to save the user input uing the native fs node module
+This project is a simple QR Code Generator built using Node.js. It allows users to input a URL or text via the command line, generate a QR code from the input, and save both the QR code as an image and the input as a text file.
 
+## Features
 
-# Info about Inquirer package
-Inquirer is an interactive command line user interface library for Node.js that simplifies the process of gathering user input through various prompt types. Below are some important terms and concepts related to the Inquirer package:
+- Command-line interface for easy input using `inquirer`
+- Generates QR code images in PNG format
+- Saves the input URL or text in a text file
 
-## Key Terms
+## Installation
 
-### 1. **Prompt Types**
-Inquirer supports multiple types of prompts, each designed for specific user interactions:
+To use this project, follow these steps:
 
-- **Input**: A simple text input.
-- **Number**: Input that expects a numeric value.
-- **Confirm**: A yes/no question.
-- **List**: Presents a list of options for the user to choose from.
-- **Checkbox**: Allows multiple selections from a list.
-- **Password**: Hides user input for sensitive information.
-- **Editor**: Opens a text editor for user input.
+1. **Clone the repository:**
 
-### 2. **Question Object**
-Each prompt is defined by a question object that includes properties such as:
+    ```zsh
+    git clone https://github.com/rohit-pachar/QR-code-generator
+    ```
 
-- **type**: Specifies the prompt type (e.g., 'input', 'list').
-- **name**: The key used to store the answer.
-- **message**: The question text displayed to the user.
-- **choices**: An array of options for list or checkbox prompts.
-- **validate**: A function to check if the input is valid.
-- **filter**: A function to modify the input before storing it.
+2. **Navigate to the project directory:**
 
-### 3. **Prompt Interface**
-The main method to launch prompts is `inquirer.prompt(questions)`, which takes an array of question objects and returns a promise with the user's answers.
+    ```zsh
+    cd Qr-code-generator
+    ```
 
-### 4. **Answers Object**
-The answers from the prompts are stored in an object where each key corresponds to the `name` property of the question object, allowing easy access to user responses.
+3. **Install the necessary dependencies:**
 
-### 5. **Reactive Interface**
-Inquirer uses a reactive programming model, allowing dynamic question flows. You can add questions dynamically during the prompt session using observables.
+    ```zsh
+    npm install
+    ```
 
-### 6. **Custom Prompts**
-Inquirer allows the creation of custom prompt types through plugins. You can register these custom prompts using `inquirer.registerPrompt(name, prompt)`.
+## Usage
 
-### 7. **Installation**
-Inquirer can be installed via npm or yarn:
+After installation, you can use the QR Code Generator by running the following command:
 
-```bash
-npm install inquirer
+```zsh
+node index.js
 ```
 
-or 
+### Example
 
-```bash
-yarn add inquirer
+1. **Run the application:**
+
+    ```bash
+    node index.js
+    ```
+
+2. **Enter your URL when prompted:**
+
+    ```
+    ? Type in your URL: https://example.com
+    ```
+
+3. **Output:**
+
+    - A QR code image (`qr_image.png`) will be generated in the project directory.
+    - The entered URL will be saved in a text file named `URL.txt`.
+
+### Command-line Interaction
+
+```zsh
+$ node index.js
+? Type in your URL: https://example.com
+File has been saved!
 ```
 
-### 8. **Legacy Version**
-The version of Inquirer available at the provided link is the legacy version. For newer projects, it is recommended to use `@inquirer/prompts`, which offers a more modern API.
+## Project Structure
 
-### 9. **Error Handling**
-Inquirer provides mechanisms to handle errors, such as when prompts cannot be rendered in non-interactive environments. The error object will have an `isTtyError` property to indicate this issue.
+```
+qr-code-generator/
+│
+├── index.js          # Main application file
+├── qr_image.png      # Generated QR code image (output)
+├── URL.txt           # Saved URL or text (output)
+├── package.json      # Project metadata and dependencies
+└── README.md         # Project documentation
+```
 
-### 10. **Environment Support**
-Inquirer is designed to work well across various terminal environments, including macOS, Windows, and Linux, although some known issues exist with certain terminals.
+## Dependencies
 
-These terms encapsulate the core functionality and usage of the Inquirer package, making it a powerful tool for creating interactive command line applications.
+This project uses the following npm packages:
 
-Citations:
-[1] https://www.npmjs.com/package/inquirer?activeTab=code
+- **[inquirer](https://www.npmjs.com/package/inquirer):** For creating an interactive command-line interface.
+- **[qr-image](https://www.npmjs.com/package/qr-image):** For generating QR codes from text or URLs.
+- **[fs](https://nodejs.org/api/fs.html):** For writing files to the filesystem (built-in Node.js module).
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve this project, please fork the repository, make your changes in a new branch, and submit a pull request.
+
+
+## Acknowledgements
+
+- **[Node.js](https://nodejs.org/)** for providing the runtime environment
+- **[Inquirer.js](https://www.npmjs.com/package/inquirer)** for simplifying user input
+- **[qr-image](https://www.npmjs.com/package/qr-image)** for making QR code generation easy
+
+## Contact
+
+For any inquiries or support, please contact [rohitpachar05@gmail.com].

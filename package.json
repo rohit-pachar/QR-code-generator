@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is a qr-code generator",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +11,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/rohit-pachar/QR-code-generator.git"
   },
-  "author": "",
+  "author": "Rohit Pachar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rohit-pachar/QR-code-generator/issues"
@@ -19,7 +20,5 @@
   "dependencies": {
     "inquirer": "^10.1.8",
     "qr-image": "^3.2.0"
-  },
-  "devDependencies": {},
-  "keywords": []
+  }
 }
